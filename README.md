@@ -1,3 +1,21 @@
+# LINE 情感机器人 · macOS 0.2.0
+
+[下载 Apple Silicon 安装包](./LINE-Emotion-Bot-0.2.0-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.0-macOS-arm64.dmg.sha256)
+
+- 适用设备：M 系列 Mac，macOS 13.5 或更新版本。
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。软件已内置正式 HTTPS 接口地址。
+- 下载后打开 DMG，将 `LINE 情感机器人.app` 拖入“应用程序”，输入管理员分配的卡密登录。
+- SHA-256：`ac60efe5d5e0a915abb178504c4ddd10bcece43f87941e880b2348beff345430`
+- 包内包含 Node 和 Python 运行组件；不包含后台密码、卡密、模型密钥或聊天记录。
+
+2026-10-05 更新：新增后端卡密认证和硬件设备绑定，支持天卡/月卡/年卡、封禁及设备授权回收。软件界面仅保留 Bot 开启与测试；聊天、提示词、成员、设备授权及系统设置移至 Laravel + Layui 管理后台，普通管理员数据独立隔离，不能切换登录身份。聊天以独立会话聊天框回放，历史、摘要和相关旧对话由 PostgreSQL 提供。授权后缓存远端配置，心跳检查状态和配置版本；授权结束时阻止模型和消息发送。
+
+这是按发布要求保留的临时签名版，未使用 Developer ID，也未经 Apple 公证。首次打开如被 macOS 阻止，可进入“系统设置 → 隐私与安全性”，找到此 App，选择“仍要打开”并确认。系统是否提供该选项受 macOS 版本与策略影响。请勿关闭 Gatekeeper。首次读取设备密钥时，按 macOS 提示完成钥匙串授权。卡密和设备权限必须在线验证。
+
+旧版 0.1.0 未包含本次线上认证改造，保留供历史追溯，分发请使用 0.2.0。
+
+---
+
 # LINE 情感机器人 · macOS 测试版
 
 [下载 Apple Silicon 安装包](./LINE-Emotion-Bot-0.1.0-macOS-arm64.dmg)
