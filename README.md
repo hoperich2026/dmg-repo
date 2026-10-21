@@ -1,3 +1,28 @@
+# LINE 情感机器人 · macOS 0.2.7
+
+[下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.7-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.7-macOS-arm64.dmg.sha256)
+
+- 适用设备：Apple Silicon（M 系列）Mac，macOS 13.5 或更新版本。
+- 安装包大小：96,873,622 字节。
+- SHA-256：`7a6633f3677bfaafa8f1c6a34921ba62bc8864fc62d9d8ae5635627bafce97fa`
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。输入管理员分配的卡密登录。
+- 安装包内置 Python、Node 和正式 HTTPS 接口地址，不包含后台密码、卡密、模型密钥或聊天记录。
+
+2026-10-21 更新：恢复 Tauri 原生 ad-hoc 签名与 HFS+ DMG 打包流程，使用兼容 macOS 13.5 的 Python 3.12 运行时。DMG 校验、包内 App 签名、全部 7 个 Mach-O 文件的架构与最低系统版本检查，以及 Python / Node 启动检查均已通过。新 Mac 上“仍要打开”的流程尚未实机验证，不能保证所有系统策略均允许放行。
+
+安装步骤：
+
+1. 用 Safari 打开上方的安装包直接下载链接，等待下载完成。
+2. 打开 DMG，将 `LINE 情感机器人.app` 拖入“应用程序”。请从“应用程序”启动一次。
+3. 若 macOS 阻止打开，进入“系统设置 → 隐私与安全性”，找到此应用，选择“仍要打开”并确认。系统是否提供该选项取决于 macOS 版本与安全策略。
+4. 按 macOS 提示完成钥匙串授权，输入管理员分配的卡密。
+
+此版本按要求继续使用临时签名，未使用 Developer ID，也未经 Apple 公证。此前通过部分聊天或网盘客户端接收 DMG 时，曾出现文件来源沙盒标记导致的“应用程序无法打开”；遇到该情况，请用 Safari 从上述原始链接重新下载并安装，不要继续复制旧下载文件。请勿关闭 Gatekeeper 或清除隔离属性来绕过安全检查。若仍无法启动，请提供 macOS 版本、警告原文以及 App 签名校验结果。
+
+下方保留旧版本的发布说明与安装包，当前分发请使用 0.2.7。
+
+---
+
 # LINE 情感机器人 · macOS 0.2.0
 
 [下载 Apple Silicon 安装包](./LINE-Emotion-Bot-0.2.0-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.0-macOS-arm64.dmg.sha256)
