@@ -1,3 +1,30 @@
+# LINE 情感机器人 · macOS 0.2.9
+
+[下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.9-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.9-macOS-arm64.dmg.sha256)
+
+- 适用设备：Apple Silicon（M 系列）Mac，macOS 13.5 或更新版本。
+- 安装包大小：97,763,871 字节。
+- SHA-256：`d712f1d0f916f1fd68c75c688f1f7150d4f88baabd6e4fc24559801ba7927abe`
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。输入管理员分配的卡密登录。
+- 安装包内置 Python、Node 和正式 HTTPS 接口地址，不包含本机授权私钥、登录会话、后台密码、卡密、模型密钥或聊天记录。
+
+2026-10-21 更新：在后台“LINE 代理地址”旁新增启用开关，默认关闭；开启后使用填写的 HTTP(S) 代理，关闭后直连且保留地址，不回退到系统环境代理。保存配置后停止并重新启动 Bot 生效。旧配置即使已填写地址，也默认关闭代理。
+
+已实测线上开关切换、关闭状态保存及客户端配置同步；本机已授权客户端版本为 0.2.9。DMG 校验、App 与包内程序签名、全部 7 个 Mach-O 文件的 Apple Silicon 架构与最低系统版本检查均通过，DMG 内 App、构建 App 和本机安装 App 的逐文件内容一致。
+
+安装步骤：
+
+1. 用 Safari 打开上方安装包直接下载链接，等待下载完成。
+2. 打开 DMG，将 `LINE 情感机器人.app` 拖入“应用程序”，从“应用程序”启动。
+3. 若 macOS 阻止打开，进入“系统设置 → 隐私与安全性”，找到此应用，选择“仍要打开”并确认。系统是否提供该选项取决于 macOS 版本与安全策略。
+4. 输入管理员分配的卡密。授权存储和旧版设备私钥首次迁移说明见下方 0.2.8 章节。
+
+此版本沿用临时签名，未使用 Developer ID，也未经 Apple 公证。请勿关闭 Gatekeeper 或清除隔离属性来绕过安全检查。若通过聊天或网盘客户端接收的副本无法打开，请用 Safari 从上述原始链接重新下载。
+
+下方保留旧版本及其发布说明，当前分发请使用 0.2.9。
+
+---
+
 # LINE 情感机器人 · macOS 0.2.8
 
 [下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.8-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.8-macOS-arm64.dmg.sha256)
@@ -23,7 +50,7 @@
 
 此版本继续使用临时签名，未使用 Developer ID，也未经 Apple 公证。此前通过部分聊天或网盘客户端接收 DMG 时，曾出现文件来源沙盒标记导致的“应用程序无法打开”；遇到该情况，请用 Safari 从上述原始链接重新下载并安装，不要继续复制旧下载文件。请勿关闭 Gatekeeper 或清除隔离属性来绕过安全检查。若仍无法启动，请提供 macOS 版本、警告原文以及 App 签名校验结果。
 
-下方保留 0.2.7 及更早版本的发布说明与下载，当前分发请使用 0.2.8。
+下方保留 0.2.7 及更早版本的发布说明与下载，当前分发请使用 0.2.9。
 
 ---
 
@@ -48,7 +75,7 @@
 
 此版本按要求继续使用临时签名，未使用 Developer ID，也未经 Apple 公证。此前通过部分聊天或网盘客户端接收 DMG 时，曾出现文件来源沙盒标记导致的“应用程序无法打开”；遇到该情况，请用 Safari 从上述原始链接重新下载并安装，不要继续复制旧下载文件。请勿关闭 Gatekeeper 或清除隔离属性来绕过安全检查。若仍无法启动，请提供 macOS 版本、警告原文以及 App 签名校验结果。
 
-下方保留旧版本的发布说明与安装包，当前分发请使用 0.2.7。
+下方保留旧版本的发布说明与安装包，当前分发请使用 0.2.9。
 
 ---
 
