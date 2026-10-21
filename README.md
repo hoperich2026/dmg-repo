@@ -1,3 +1,32 @@
+# LINE 情感机器人 · macOS 0.2.8
+
+[下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.8-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.8-macOS-arm64.dmg.sha256)
+
+- 适用设备：Apple Silicon（M 系列）Mac，macOS 13.5 或更新版本。
+- 安装包大小：97,758,937 字节。
+- SHA-256：`c605691aec33e26682cfa12317ce5db636463d62a9394cd10e1e3ce07f204465`
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。输入管理员分配的卡密登录。
+- 安装包内置 Python、Node 和正式 HTTPS 接口地址，不包含本机授权私钥、登录会话、后台密码、卡密、模型密钥或聊天记录。
+
+2026-10-21 更新：设备授权私钥和登录会话改存本机 SQLite，避免临时签名版本更新后，应用再次访问钥匙串而反复出现密码确认。存储目录权限为 `700`、数据库文件权限为 `600`；数据未加密，也不具备钥匙串针对应用的访问保护，因此本机同一用户权限下的程序可能读取这些数据。
+
+升级用户需重新输入一次卡密。首次登录时，若需从旧版钥匙串迁移设备私钥，macOS 仍可能要求确认一次 Mac 登录密码；迁移会保留原设备公钥，完成后使用本地 SQLite，不再读取钥匙串。应用启动时不会自动迁移旧登录会话。请在系统弹窗中完成确认，无需向管理员或他人提供 Mac 密码。
+
+本次通过 35 项 Rust 测试，另有 1 项真实卡密与硬件测试未运行。最终 DMG 校验、只读挂载包内 App 签名、全部 7 个 Mach-O 文件的 Apple Silicon 架构与最低系统版本检查均通过；Node SQLite 启动检查正常，Python 未登录授权检查返回预期提示。新 Mac 上的真实迁移、运行及“仍要打开”流程尚未实机验收。
+
+安装步骤：
+
+1. 用 Safari 打开上方安装包直接下载链接，等待下载完成。
+2. 打开 DMG，将 `LINE 情感机器人.app` 拖入“应用程序”，再从“应用程序”启动一次。
+3. 若 macOS 阻止打开，进入“系统设置 → 隐私与安全性”，找到此应用，选择“仍要打开”并确认。系统是否提供该选项取决于 macOS 版本与安全策略。
+4. 输入管理员分配的卡密。旧版用户按系统提示完成一次设备私钥迁移确认。
+
+此版本继续使用临时签名，未使用 Developer ID，也未经 Apple 公证。此前通过部分聊天或网盘客户端接收 DMG 时，曾出现文件来源沙盒标记导致的“应用程序无法打开”；遇到该情况，请用 Safari 从上述原始链接重新下载并安装，不要继续复制旧下载文件。请勿关闭 Gatekeeper 或清除隔离属性来绕过安全检查。若仍无法启动，请提供 macOS 版本、警告原文以及 App 签名校验结果。
+
+下方保留 0.2.7 及更早版本的发布说明与下载，当前分发请使用 0.2.8。
+
+---
+
 # LINE 情感机器人 · macOS 0.2.7
 
 [下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.7-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.7-macOS-arm64.dmg.sha256)
