@@ -1,3 +1,29 @@
+# LINE 情感机器人 · macOS 0.2.19
+
+[下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.19-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.19-macOS-arm64.dmg.sha256)
+
+- 适用设备：Apple Silicon（M 系列）Mac，macOS 13.5 或更新版本。
+- 安装包大小：98,021,874 字节。
+- SHA-256：`87bd50e40fb400c58eb6d9e67733a0be8ff35ee88112eff7774375ead084f89e`
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。使用管理员分配的卡密登录。
+
+2026-10-22 更新，修正 0.2.18 的会话取消错误处理：
+
+1. 会话在群成员、联系人或官方翻译账号查证期间关闭，或关闭后重新开启时，旧发送请求应由会话控制取消。修复该取消异常被包装成“核验官方翻译账号／类别未确定”的 LINE 发送前查证失败提示；即使 SDK 包装了底层取消异常，也保留原会话停止原因。
+2. 群成员、联系人和官方账号的只读查证不再额外等待后台会话授权，避免占用既有的 15 秒查证预算。实际发送的 SDK 调用前，以及加密、请求序号、会话续期等待之后的底层发送请求，仍重新校验对应会话状态。旧回复仍不能因重新开启 AI 而补发；控制只影响对应会话，Bot 和其他会话继续运行。
+
+保留 0.2.18 的图片／视频／关键词关注、会话独立 AI 开关和简繁体关键词匹配。真正的 LINE 查询、网络或协议错误仍会报告；本版没有取消官方翻译账号核验，也不会在失败后自动改用另一种方式重发。
+
+验证：全部 198 项 Node 回归通过，新增 5 项针对实际 SDK 合成响应的回归，覆盖官方账号核验期间取消不误报、查证不额外读取控制状态、查证结束后旧代数仍被拦截。最终打包的 Node 模块再次通过这 5 项回归；App 与 DMG 内 App 的签名、架构、最低系统版本、图标及 DMG 完整性检查通过。未为验证发送真实 LINE 消息；真实群聊请更新后验收。
+
+安装：用 Safari 下载上方原始 DMG，退出旧版 App 后拖入“应用程序”替换，再手动启动并扫码。已保存的卡密、设备数据和本机代理设置保留。本次发布不自动替换或重启正在运行的客户端。
+
+本版继续使用 Tauri 原生临时签名，未经 Apple 公证。若系统阻止打开，请在“系统设置 → 隐私与安全性”对该 App 选择“仍要打开”并确认；是否提供该选项取决于系统策略。请勿关闭 Gatekeeper。
+
+下方完整保留 0.2.18 及更早版本的说明与安装包。
+
+---
+
 # LINE 情感机器人 · macOS 0.2.18
 
 [下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.18-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.18-macOS-arm64.dmg.sha256)
