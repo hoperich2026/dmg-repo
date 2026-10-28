@@ -1,3 +1,32 @@
+# LINE 情感机器人 · macOS 0.2.27
+
+[下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.27-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.27-macOS-arm64.dmg.sha256)
+
+- 适用设备：Apple Silicon（M 系列）Mac，macOS 13.5 或更新版本。
+- 安装包大小：98,108,517 字节。
+- SHA-256：`9121a470fd2bfd8d226f8b52e1bc53af4e3672e7725844d6c9e55b39552066b6`
+- 管理后台：[linebot.geteway1-guangjintech.com](https://linebot.geteway1-guangjintech.com)。使用管理员分配的卡密登录。
+
+2026-10-29 发布：
+
+1. Bot 运行时请求系统防止空闲休眠，仍允许屏幕休眠。主动选择系统睡眠或合盖仍可使电脑休眠；唤醒后及时重新验证后台授权，并自动恢复此前运行中的 Bot。手动停止、退出登录或确认的终止错误会取消自动恢复。
+2. 配套后端已部署持久摘要队列。摘要独立处理，超时或上游暂时失败后保留原摘要和处理进度并退避重试，避免摘要长期占用客户端同步模型请求。已有积压由后台继续处理。
+3. 纳入回复协议严格校验、OpenRouter 关闭思考模式、内部指令泄漏拦截及已泄漏助手历史的上下文过滤。保留发送前检查、会话 AI 控制、账号隔离、聊天记录去重及中断恢复。
+
+验证：后端 858 项、Rust 105 项、回复引擎 Python 296 项、桌面 Python 91 项、桌面 Node 268 项及后台 Node 13 项，共 1,631 项自动测试通过；另有 1 项既有的手动凭据／设备检查未运行。原生防休眠接口、前端构建、App 与 DMG 内 App 的签名、架构、最低系统版本及 DMG 完整性检查通过。后端上线后已验证真实摘要任务成功推进；掉线设备上的实际休眠、唤醒表现仍需安装后验收。
+
+安装与升级：
+
+1. 下载上方 DMG，退出旧版 App 后，将新版拖入“应用程序”替换，再手动启动 Bot。
+2. 已有有效的 LINE 登录可继续恢复；卡密、账号隔离、会话 AI 开关和本机代理设置保留。
+3. 请在曾掉线的 Mac 上确认运行、屏幕休眠及系统唤醒后的恢复表现。本次上传不会自动安装或启动客户端。
+
+本版继续使用 Tauri 原生临时签名，未经 Apple 公证。若系统阻止打开，请按系统提供的“隐私与安全性”提示确认打开。
+
+下方完整保留 0.2.26 及更早版本的说明与安装包。
+
+---
+
 # LINE 情感机器人 · macOS 0.2.26
 
 [下载 Apple Silicon 安装包](https://github.com/hoperich2026/dmg-repo/raw/refs/heads/main/LINE-Emotion-Bot-0.2.26-macOS-arm64.dmg) · [SHA-256 校验文件](./LINE-Emotion-Bot-0.2.26-macOS-arm64.dmg.sha256)
